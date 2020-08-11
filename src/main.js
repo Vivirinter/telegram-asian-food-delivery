@@ -1,8 +1,8 @@
 const Telegraf = require('telegraf');
 const Markup = require('telegraf/markup');
 
-const bot = new Telegraf('1163817297:AAF1wj5Nfi4ldhgncuKf4Uz8d0De6_8SxK4');
-const PAYMENT_TOKEN = '410694247:TEST:bf4cd2c9-6e72-4846-91c7-e15b45c2c7d7';
+const bot = new Telegraf(process.env.BOT_TOKEN);
+const PAYMENT_TOKEN = process.env.PROVIDER_TOKEN;
 
 const products = [
     {
