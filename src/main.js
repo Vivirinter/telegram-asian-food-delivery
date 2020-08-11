@@ -7,7 +7,7 @@ const PAYMENT_TOKEN = '410694247:TEST:bf4cd2c9-6e72-4846-91c7-e15b45c2c7d7';
 const products = [
     {
         name: 'Wok',
-        description: 'All ingredients are pre-prepared for roasting. Cooking on a fire takes 5-10 minutes, so you simply won\'t have time to cut anything in the process, so all products are chopped and laid out in separate cups and bowls before the pan is placed on the stove. It is very important to cut the ingredients into thin or small pieces. This will make the roasting faster and more even. Most of the meat and vegetables are chopped into thin long strips so that these products go well with noodles of the same shape.',
+        description: 'All ingredients are pre-prepared for roasting. Cooking on a fire takes 5-10 minutes, so you simply won\'t have time to cut anything in the process, so all products are chopped and laid out in separate cups and bowls before the pan is placed on the stove.',
         price: 44.54,
         photo_url: 'https://media-cdn.tripadvisor.com/media/photo-s/18/b5/ab/46/enjoy-your-wok.jpg'
 
@@ -28,21 +28,21 @@ const products = [
     },
     {
         name: 'Noodle and shrimp',
-        description: 'An original dish for fans of Asian cuisine. The convenient format allows you to take the product on the road or to the office where there are no dishes. Oriental style instant noodles with shrimp and lime flavor Vifon will help you fill up in times of pressure, enjoy and provide you with energy.',
+        description: 'An original dish for fans of Asian cuisine. The convenient format allows you to take the product on the road or to the office where there are no dishes.',
         price: 56.4,
         photo_url: 'https://images-gmi-pmc.edge-generalmills.com/30c2940d-929c-47e8-9ba1-f6551e4eac1e.jpg'
 
     },
     {
         name: 'Lagman with chicken',
-        description: 'Chicken lagman is a delicious dish that belongs to Asian cuisine. It is a thick rich soup or hot with gravy. Every housewife can do Lagman at home. In general, cooking differs depending on the recipe chosen. You can find Uzbek, Uyghur, home and many other lagmans.',
+        description: 'Chicken lagman is a delicious dish that belongs to Asian cuisine. It is a thick rich soup or hot with gravy. Every housewife can do Lagman at home. In general, cooking differs depending on the recipe chosen. You can find Uzbek,Uyghur, home and many other.',
         price: 24.94,
         photo_url: 'https://silkroadchef.files.wordpress.com/2015/01/uyghur_lagman_1024.jpg'
 
     },
     {
         name: 'Chow fan',
-        description: 'Beef chow fun is a staple Cantonese dish, made from stir-frying beef, hor fun and bean sprouts. It is commonly found in yum cha restaurants in Guangdong, Hong Kong, and overseas, as well as in cha chaan tengs. Chow fun, or stir-fried hor fun noodles, is any number of different individual preparations.',
+        description: 'Beef chow fun is a staple Cantonese dish, made from stir-frying beef, hor fun and bean sprouts. It is commonly found in yum cha restaurants in Guangdong, Hong Kong, and overseas, as well as in cha chaan tengs. Chow fun, or stir-fried hor fun noodles.',
         price: 88.99,
         photo_url: 'https://media-cdn.tripadvisor.com/media/photo-s/18/b5/ab/46/enjoy-your-wok.jpg'
 
@@ -94,7 +94,6 @@ bot.on("callback_query", function (callback) {
 })
 
 bot.command('start', ({ reply }) => reply('Hello! We opened recently. What do you want?'))
-// bot.start(({ replyWithInvoice }) => replyWithInvoice(createInvoice(products)))
 bot.command('buy', ({ replyWithInvoice }) => replyWithInvoice(createInvoice(products), replyOptions))
 bot.on('shipping_query', ({ answerShippingQuery }) => answerShippingQuery(true, shippingOptions))
 bot.on('pre_checkout_query', ({ answerPreCheckoutQuery }) => answerPreCheckoutQuery(true))
